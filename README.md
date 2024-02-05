@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Frontend Mentor - Article preview component solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Article preview component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- View the optimal layout for the component depending on their device's screen size
+- See the social media share links when they click the share icon
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+## Desktop Design
+![](./desktop-design.PNG)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Active Desktop Design
+![](./desktop-design-active.PNG)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Mobile Design
+![](./mobile-design-active.PNG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `npm run eject`
+- Live Site URL: [Article Preview](https://rkendall300.github.io/article-preview)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## My process
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- [React](https://reactjs.org/) - JS library
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### What I learned
 
-## Learn More
+The biggest learning step for this project was of course the pop-up sharing bar. I've never had a pop-up type of section in any project before, so learning how to do it was a bit difficult and honestly frustrating at times. For the desktop design, it was not too hard to figure out, and my friend Eric helped me out with setting the positions properly to allow for it to "float" on top of the card. Using [position: relative] on the share icon and [position: absolute] was the proper way to do it, and after learning more about positioning, I am pretty comfortable with this moving forward.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+However, the positioning on the mobile design was a much different story. I put the pop-up sharing bar inside the element that contained the share icon, so the positioning in the desktop version would be easy, but that was much more difficult in the mobile version since the pop-up needed to essentially cover the entire footer. So, modifying the absolute positioning to cover the footer wasn't too difficult, it just took a bit to get correct, but the biggest problem I had was getting the share-icon background to be on the same z-index as the pop-up share bar. Because of how the HTML elements are laid out, with the share bar being inside of the parent div of the share-icon, the actual background that I was using for the share-icon was not able to get moved up to the same z-index. After reading a lot of articles online trying to figure out if a parent could appear above a child in z-index, it did not seem possible and I would have to reorganize the code completely and redo both desktop and mobile versions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Finally, what I ended up actually doing was essentially cheating the code by using the small triangle element that was originally just made for the desktop design and modifying it to be the same size, color, and appearance as the share-icon background. This allowed me to copy the parent element's original properties while the triangle element was actually a child. This is probably not something that I would use in the future, but was a huge relief for this project because I didn't have to redo the share bar.
 
-### Code Splitting
+### Useful resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Z-index Help](https://www.freecodecamp.org/news/4-reasons-your-z-index-isnt-working-and-how-to-fix-it-coder-coder-6bc05f103e6c/) - This helped me learn more about z-indexes, and the very finicky situations in which it can become difficult. The main lesson I learned from it was to attempt to avoid z-indexes by using different position properties, except for the times that z-index is necessary.
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Frontend Mentor - [@rkendall300](https://www.frontendmentor.io/profile/rkendall300)
 
-### Making a Progressive Web App
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thanks to my friend Eric for the help with this!

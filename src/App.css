@@ -1,38 +1,246 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: 'Manrope-Bold';
+    src: url('./static/Manrope-Bold.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: 'Manrope-Medium';
+    src: url('./static/Manrope-Medium.ttf');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Add every top of file */
+*, ::before, ::after {
+    box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+main {
+    width: 100%;
+    min-height: 100vh;
+    border: 0;
+    padding: 0;
+    margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+#backdrop {
+    min-width: 100%;
+    min-height: 100vh;
+    background-color: #ecf2f8;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#card {
+    width: 750px;
+    height: 300px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px 3px #dfdede;
+}
+
+#fm-image-container {
+    background-image: url('./images/drawers.jpg');
+    flex: 1;
+    min-width: 300px;
+    height: 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 10px 0 0 10px;
+}
+
+#info {
+    flex: 2;
+    padding: 35px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    font-family: 'Manrope-Bold';
+    font-size: 22px;
+    color: #48556a;
+    margin: 0;
+}
+
+#description {
+    font-family: 'Manrope-Medium';
+    font-size: 13px;
+    line-height: 20px;
+    color: #6d7f97;
+    margin: 15px 0 20px 0;
+}
+
+#footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+#avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+#author-info {
+    height: 100%;
+    margin-right: auto;
+}
+
+#name {
+    font-family: 'Manrope-Medium';
+    font-size: 13px;
+    color: #48556a;
+    margin: 5px 0;
+}
+
+#date {
+    font-family: 'Manrope-Medium';
+    font-size: 13px;
+    color: #9eafc2;
+    margin: 0;
+}
+
+.share-background-closed {
+    width: 40px;
+    height: 40px;
+    background-color: #ecf2f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.share-background-open {
+    width: 40px;
+    height: 40px;
+    background-color: #6d7f97;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    img {
+        filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(0%) hue-rotate(168deg) brightness(108%) contrast(101%);
+    }
+}
+
+.triangle {
+    width: 20px;
+    height: 20px;
+    background-color: #48556a;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 60px;
+}
+
+.share-bar {
+    width: 225px;
+    height: 50px;
+    position: absolute;
+    bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #48556a;
+    border-radius: 10px;
+    padding: 10px 30px;
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+#share-items {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#share-text {
+    color: #9eafc2;
+    font-size: 13px;
+    font-family: 'Manrope-Medium';
+    font-weight: 100;
+    letter-spacing: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+@media screen and (max-width: 850px) {
+    #card {
+        width: 325px;
+        height: 550px;
+        min-height: 550px;
+        flex-direction: column;
+    }
+
+    #fm-image-container {
+        width: 100%;
+        min-height: 210px;
+        background-position: top;
+        border-radius: 10px 10px 0 0;
+    }
+
+    #info {
+        padding: 25px 35px 0 25px;
+    }
+
+    #title {
+        font-size: 16px;
+    }
+
+    #description {
+        margin: 15px 0 0 0;
+    }
+
+    #footer {
+        margin: auto 0 20px 0;
+    }
+
+    .share-bar {
+        width: 325px;
+        height: 90px;
+        border-radius: 0 0 10px 10px;
+        bottom: -25px;
+        right: -35px;
+        z-index: -1;
+    }
+
+    #share-items {
+        width: 175px;
+    }
+
+    #share, .share-background-open {
+        z-index: 1;
+    }
+
+    .triangle {
+        width: 40px;
+        height: 40px;
+        background-color: #6d7f97;
+        border-radius: 50%;
+        bottom: 0;
+        right: 0;
+    }
 }
